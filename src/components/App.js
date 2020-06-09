@@ -10,7 +10,7 @@ class App extends Component {
       movies: [],
       searchTerm: ''
     }
-    this.apiKey = "4be0f1880b1b0318b242d8f03debbd8b"
+    this.apiKey = process.env.REACT_APP_API
   }
 
   handleSubmit = (e) => {
@@ -20,7 +20,7 @@ class App extends Component {
     .then(data => data.json())
     .then(data => {
       console.log(data);
-      this.setState({ movies: [data]})
+      this.setState({ movies: [...data.results]})
     })
   }
 
