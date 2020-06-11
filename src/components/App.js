@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import MovieList from './MovieList';
 import Nav from './Nav';
 import SearchArea from './SearchArea';
 
@@ -33,6 +34,7 @@ class App extends Component {
         <div className="App">
           <Nav />
           <SearchArea handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+          <MovieList movies={this.state.movies} />
       </div>
       )
   };
